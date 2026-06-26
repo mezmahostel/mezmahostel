@@ -26,10 +26,13 @@ WhatsApp Booking
   <section class="section">
     <section class="section dark">
   <h2>Gallery</h2>
-      <img src="khune.jpg" width="300">
 
   <div class="grid">
-    <div class="card">Room</div>
+    <div class="card">
+<img src="room.jpg" width="250">
+<img src="room1.jpg" width="250">
+<p>Room</p>
+</div>
     <div class="card">Dorm</div>
     <div class="card">Kitchen</div>
     <div class="card">Lounge</div>
