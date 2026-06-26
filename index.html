@@ -5,6 +5,24 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Mezma Hostel</title>
   <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* ✅ FIX: gallery grid images */
+    .gallery-img{
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 12px;
+      cursor: pointer;
+    }
+
+    /* grid spacing safety */
+    .grid{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 15px;
+    }
+  </style>
 </head>
 
 <body>
@@ -20,7 +38,6 @@
       <a href="#booking" class="btn">Book Now</a>
       <a href="https://wa.me/37495169597" class="btn" target="_blank">WhatsApp Booking</a>
 
-      <!-- Gallery Button -->
       <a href="#gallery" class="btn">📸 Open Gallery</a>
     </div>
   </header>
@@ -37,9 +54,9 @@
   <section id="rooms" class="section dark">
     <h2>Dorm Rooms</h2>
 
-    <p>Click below to view room photos</p>
+    <p>Click below to view all room photos</p>
 
-    <a href="#gallery" class="btn">View Room Photos</a>
+    <a href="#gallery" class="btn">View Gallery</a>
   </section>
 
   <!-- GALLERY -->
@@ -48,16 +65,16 @@
 
     <div class="grid">
 
-      <div class="card"><img src="room1.jpg" alt=""></div>
-      <div class="card"><img src="room2.jpg" alt=""></div>
-      <div class="card"><img src="room3.jpg" alt=""></div>
-      <div class="card"><img src="room4.jpg" alt=""></div>
-      <div class="card"><img src="room5.jpg" alt=""></div>
-      <div class="card"><img src="room6.jpg" alt=""></div>
+      <img src="room1.jpg" class="gallery-img">
+      <img src="room2.jpg" class="gallery-img">
+      <img src="room3.jpg" class="gallery-img">
+      <img src="room4.jpg" class="gallery-img">
+      <img src="room5.jpg" class="gallery-img">
+      <img src="room6.jpg" class="gallery-img">
 
-      <div class="card"><img src="kitchen1.jpg" alt=""></div>
-      <div class="card"><img src="kitchen2.jpg" alt=""></div>
-      <div class="card"><img src="bathroom.jpg" alt=""></div>
+      <img src="kitchen1.jpg" class="gallery-img">
+      <img src="kitchen2.jpg" class="gallery-img">
+      <img src="bathroom.jpg" class="gallery-img">
 
     </div>
   </section>
@@ -78,7 +95,7 @@
   <section id="booking" class="section dark">
     <h2>Booking</h2>
 
-    <form class="form" id="bookingForm">
+    <form class="form">
       <input type="text" placeholder="Full Name" required>
       <input type="email" placeholder="Email" required>
       <input type="date" required>
@@ -98,6 +115,40 @@
   <footer>
     <p>© 2026 Mezma Hostel. All rights reserved.</p>
   </footer>
+
+  <!-- ✅ LIGHTBOX (click to enlarge image) -->
+  <script>
+    document.querySelectorAll('.gallery-img').forEach(img => {
+      img.addEventListener('click', function () {
+
+        const overlay = document.createElement('div');
+        overlay.style.position = 'fixed';
+        overlay.style.top = 0;
+        overlay.style.left = 0;
+        overlay.style.width = '100%';
+        overlay.style.height = '100%';
+        overlay.style.background = 'rgba(0,0,0,0.9)';
+        overlay.style.display = 'flex';
+        overlay.style.alignItems = 'center';
+        overlay.style.justifyContent = 'center';
+        overlay.style.zIndex = 9999;
+
+        const bigImg = document.createElement('img');
+        bigImg.src = this.src;
+        bigImg.style.maxWidth = '90%';
+        bigImg.style.maxHeight = '90%';
+        bigImg.style.borderRadius = '10px';
+
+        overlay.appendChild(bigImg);
+        document.body.appendChild(overlay);
+
+        overlay.addEventListener('click', () => {
+          overlay.remove();
+        });
+
+      });
+    });
+  </script>
 
 </body>
 </html>
