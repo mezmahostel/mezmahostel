@@ -9,26 +9,32 @@ body{
 .hero{
   height:60vh;
   background:#000;
-  color:#d4af37; /* طلایی */
   display:flex;
   justify-content:center;
   align-items:center;
   text-align:center;
+  color:#fff;
 }
 
 .hero h1{
-  color:#d4af37;
+  font-size:56px;
+  color:#f5d27a;
+  letter-spacing:2px;
+  margin:0;
+  text-shadow:0 0 12px rgba(212,175,55,0.3);
 }
 
 .hero p{
-  color:#ccc;
+  font-size:18px;
+  color:#d0d0d0;
+  margin-top:10px;
 }
 
 .hero-content{
   display:flex;
   flex-direction:column;
   align-items:center;
-  gap:12px;
+  gap:15px;
 }
 
 /* BUTTONS */
@@ -39,6 +45,18 @@ body{
   text-decoration:none;
   border-radius:8px;
   font-weight:bold;
+  transition:0.3s;
+}
+
+.btn:hover{
+  background:#f5d27a;
+}
+
+.btn-group{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
 }
 
 /* SECTIONS */
@@ -52,21 +70,10 @@ body{
   background:#0b0b0b;
 }
 
-/* CARDS (همون حس قبلی) */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
-  max-width:1000px;
-  margin:auto;
-}
-
-.card{
-  background:#1a1a1a;
-  padding:20px;
-  border-radius:12px;
-  border:1px solid #222;
-  color:#ddd;
+/* LIST */
+.list{
+  list-style:none;
+  padding:0;
 }
 
 /* GALLERY */
@@ -82,7 +89,13 @@ body{
   width:100%;
   height:180px;
   object-fit:cover;
-  border-radius:10px;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.3s;
+}
+
+.gallery-img:hover{
+  transform:scale(1.03);
 }
 
 /* FORM */
@@ -97,6 +110,8 @@ body{
 .form input,
 .form button{
   padding:10px;
+  border:none;
+  border-radius:6px;
 }
 
 /* FOOTER */
@@ -108,16 +123,12 @@ footer{
   border-top:1px solid #222;
 }
 
-/* BUTTON GROUP */
-.btn-group{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:10px;
-}
-
-/* 📱 MOBILE FIX */
+/* MOBILE */
 @media(max-width:768px){
+
+  .hero h1{
+    font-size:38px;
+  }
 
   .btn-group{
     flex-direction:column;
@@ -129,7 +140,7 @@ footer{
     text-align:center;
   }
 
-  .grid{
+  .gallery{
     grid-template-columns:repeat(2,1fr);
   }
 }
