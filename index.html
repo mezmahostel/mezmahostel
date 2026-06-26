@@ -20,7 +20,7 @@
       <a href="#booking" class="btn">Book Now</a>
       <a href="https://wa.me/37495169597" class="btn" target="_blank">WhatsApp Booking</a>
 
-      <button class="btn" onclick="toggleGallery()">📸 Gallery</button>
+      <button class="btn" onclick="toggleGallery()">📸 Open Gallery</button>
     </div>
   </header>
 
@@ -32,35 +32,32 @@
     </p>
   </section>
 
-  <!-- ROOMS -->
+  <!-- ROOMS (ONLY BUTTON) -->
   <section id="rooms" class="section dark">
     <h2>Dorm Rooms</h2>
 
-    <div class="grid">
-      <div class="card"><img src="image/room1.jpg"></div>
-      <div class="card"><img src="image/room2.jpg"></div>
-      <div class="card"><img src="image/room3.jpg"></div>
-      <div class="card"><img src="image/room4.jpg"></div>
-      <div class="card"><img src="image/room5.jpg"></div>
-      <div class="card"><img src="image/room6.jpg"></div>
-    </div>
+    <p>View all room photos in gallery</p>
+
+    <a href="#gallery" class="btn" onclick="openGallery()">View Rooms</a>
   </section>
 
-  <!-- GALLERY (HIDDEN) -->
+  <!-- GALLERY (HIDDEN BY DEFAULT) -->
   <section id="gallery" class="section dark" style="display:none;">
     <h2>Gallery</h2>
 
     <div class="grid">
-      <div class="card"><img src="image/room1.jpg"></div>
-      <div class="card"><img src="image/room2.jpg"></div>
-      <div class="card"><img src="image/room3.jpg"></div>
-      <div class="card"><img src="image/room4.jpg"></div>
-      <div class="card"><img src="image/room5.jpg"></div>
-      <div class="card"><img src="image/room6.jpg"></div>
 
-      <div class="card"><img src="image/kitchen1.jpg"></div>
-      <div class="card"><img src="image/kitchen2.jpg"></div>
-      <div class="card"><img src="image/bathroom.jpg"></div>
+      <div class="card"><img src="image/room1.jpg" alt=""></div>
+      <div class="card"><img src="image/room2.jpg" alt=""></div>
+      <div class="card"><img src="image/room3.jpg" alt=""></div>
+      <div class="card"><img src="image/room4.jpg" alt=""></div>
+      <div class="card"><img src="image/room5.jpg" alt=""></div>
+      <div class="card"><img src="image/room6.jpg" alt=""></div>
+
+      <div class="card"><img src="image/kitchen1.jpg" alt=""></div>
+      <div class="card"><img src="image/kitchen2.jpg" alt=""></div>
+      <div class="card"><img src="image/bathroom.jpg" alt=""></div>
+
     </div>
   </section>
 
@@ -105,12 +102,12 @@
   <script>
     function toggleGallery() {
       const g = document.getElementById("gallery");
+      g.style.display = (g.style.display === "none") ? "block" : "none";
+    }
 
-      if (g.style.display === "none") {
-        g.style.display = "block";
-      } else {
-        g.style.display = "none";
-      }
+    function openGallery() {
+      document.getElementById("gallery").style.display = "block";
+      document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
     }
   </script>
 
