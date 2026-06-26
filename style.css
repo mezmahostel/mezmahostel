@@ -1,267 +1,63 @@
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f0f0f;
-  color: white;
-}
-
-.hero {
-  height: 100vh;
-  background: url('https://images.unsplash.com/photo-1501117716987-c8e1ecb210e9') center/cover;
+/* HERO buttons fix */
+.hero-content{
   display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
   justify-content: center;
-  align-items: center;
-  position: relative;
-  text-align: center;
 }
 
-.overlay {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.6);
-}
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-}
-
-.hero h1 {
-  font-size: 50px;
-  margin: 0;
-}
-
-.hero p {
-  color: #ccc;
-}
-
-.btn {
-  padding: 12px 25px;
-  background: gold;
-  color: black;
+/* buttons */
+.btn{
+  display: inline-block;
+  padding: 10px 18px;
+  background: black;
+  color: white;
   text-decoration: none;
   border-radius: 8px;
-  font-weight: bold;
 }
 
-.section {
-  padding: 60px 20px;
+/* sections */
+.section{
+  padding: 50px 20px;
   text-align: center;
 }
 
-.dark {
-  background: #1a1a1a;
+.dark{
+  background: #f2f2f2;
 }
 
-.grid {
+/* gallery grid */
+.grid{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 15px;
-  margin-top: 20px;
 }
 
-.card {
-  background: #222;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.form {
-  display: flex;
-  flex-direction: column;
-  max-width: 300px;
-  margin: auto;
-}
-
-.form input,
-.form button {
-  margin: 8px 0;
-  padding: 10px;
-  border-radius: 5px;
-  border: none;
-}
-
-.form button {
-  background: gold;
-  font-weight: bold;
+/* images fix */
+.gallery-img{
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 12px;
   cursor: pointer;
+  transition: 0.3s;
 }
 
-footer {
-  text-align: center;
-  padding: 20px;
-  background: black;
-  color: gray;
+.gallery-img:hover{
+  transform: scale(1.03);
 }
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Mezma Hostel</title>
-  <link rel="stylesheet" href="style.css">
+/* mobile fix */
+@media (max-width: 768px){
 
-  <style>
-    /* ✅ FIX: gallery grid images */
-    .gallery-img{
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-      border-radius: 12px;
-      cursor: pointer;
-    }
-
-    /* grid spacing safety */
-    .grid{
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 15px;
-    }
-  </style>
-</head>
-
-<body>
-
-  <!-- HERO -->
-  <header class="hero">
-    <div class="overlay"></div>
-
-    <div class="hero-content">
-      <h1>Mezma Hostel</h1>
-      <p>Comfortable & Affordable Stay in Yerevan</p>
-
-      <a href="#booking" class="btn">Book Now</a>
-      <a href="https://wa.me/37495169597" class="btn" target="_blank">WhatsApp Booking</a>
-
-      <a href="#gallery" class="btn">📸 Open Gallery</a>
-    </div>
-  </header>
-
-  <!-- ABOUT -->
-  <section class="section">
-    <h2>About Us</h2>
-    <p>
-      Mezma Hostel is a cozy place in Yerevan with 8 rooms offering a friendly environment for travelers from all over the world.
-    </p>
-  </section>
-
-  <!-- ROOMS -->
-  <section id="rooms" class="section dark">
-    <h2>Dorm Rooms</h2>
-
-    <p>Click below to view all room photos</p>
-
-    <a href="#gallery" class="btn">View Gallery</a>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="section dark">
-    <h2>Gallery</h2>
-
-    <div class="grid">
-
-      <img src="room1.jpg" class="gallery-img">
-      <img src="room2.jpg" class="gallery-img">
-      <img src="room3.jpg" class="gallery-img">
-      <img src="room4.jpg" class="gallery-img">
-      <img src="room5.jpg" class="gallery-img">
-      <img src="room6.jpg" class="gallery-img">
-
-      <img src="kitchen1.jpg" class="gallery-img">
-      <img src="kitchen2.jpg" class="gallery-img">
-      <img src="bathroom.jpg" class="gallery-img">
-
-    </div>
-  </section>
-
-  <!-- FACILITIES -->
-  <section id="facilities" class="section">
-    <h2>Facilities</h2>
-    <ul class="list">
-      <li>Free WiFi</li>
-      <li>Shared Kitchen</li>
-      <li>Clean Bathrooms</li>
-      <li>24/7 Support</li>
-      <li>Friendly Atmosphere</li>
-    </ul>
-  </section>
-
-  <!-- BOOKING -->
-  <section id="booking" class="section dark">
-    <h2>Booking</h2>
-
-    <form class="form">
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="date" required>
-      <input type="date" required>
-      <input type="number" placeholder="Guests" required>
-      <button type="submit">Send to WhatsApp</button>
-    </form>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section">
-    <h2>Contact</h2>
-    <p>📞 WhatsApp: +37495169597</p>
-    <p>📧 Email: meysamdibaa@gmail.com</p>
-  </section>
-
-  <footer>
-    <p>© 2026 Mezma Hostel. All rights reserved.</p>
-  </footer>
-
-  <!-- ✅ LIGHTBOX (click to enlarge image) -->
-  <script>
-    document.querySelectorAll('.gallery-img').forEach(img => {
-      img.addEventListener('click', function () {
-
-        const overlay = document.createElement('div');
-        overlay.style.position = 'fixed';
-        overlay.style.top = 0;
-        overlay.style.left = 0;
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.background = 'rgba(0,0,0,0.9)';
-        overlay.style.display = 'flex';
-        overlay.style.alignItems = 'center';
-        overlay.style.justifyContent = 'center';
-        overlay.style.zIndex = 9999;
-
-        const bigImg = document.createElement('img');
-        bigImg.src = this.src;
-        bigImg.style.maxWidth = '90%';
-        bigImg.style.maxHeight = '90%';
-        bigImg.style.borderRadius = '10px';
-
-        overlay.appendChild(bigImg);
-        document.body.appendChild(overlay);
-
-        overlay.addEventListener('click', () => {
-          overlay.remove();
-        });
-
-      });
-    });
-  </script>
-
-</body>
-</html>
-          @media (max-width: 768px) {
-
-  .hero-content {
-    display: flex;
+  .hero-content{
     flex-direction: column;
     align-items: center;
-    gap: 10px;
   }
 
-  .btn {
+  .btn{
     width: 90%;
     text-align: center;
-    font-size: 16px;
   }
 
 }
