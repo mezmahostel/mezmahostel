@@ -58,14 +58,17 @@ WhatsApp Booking
   <section id="booking" class="section dark">
     <h2>Booking</h2>
 
-    <form class="form">
-      <input type="text" placeholder="Full Name" required>
-      <input type="email" placeholder="Email" required>
-      <input type="date" required>
-      <input type="date" required>
-      <input type="number" placeholder="Guests" required>
-      <button type="submit">Send Request</button>
-    </form>
+<form class="form" id="bookingForm">
+
+  <input type="text" id="name" placeholder="Full Name" required>
+  <input type="email" id="email" placeholder="Email" required>
+  <input type="date" id="checkin" required>
+  <input type="date" id="checkout" required>
+  <input type="number" id="guests" placeholder="Guests" required>
+
+  <button type="submit">Send to WhatsApp</button>
+
+</form>
   </section>
 
   <!-- CONTACT -->
