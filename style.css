@@ -1,5 +1,11 @@
-body{
+/* RESET */
+*{
   margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
   font-family: Arial, sans-serif;
   background:#0f0f0f;
   color:#eaeaea;
@@ -13,21 +19,6 @@ body{
   justify-content:center;
   align-items:center;
   text-align:center;
-  color:#fff;
-}
-
-.hero h1{
-  font-size:56px;
-  color:#f5d27a;
-  letter-spacing:2px;
-  margin:0;
-  text-shadow:0 0 12px rgba(212,175,55,0.3);
-}
-
-.hero p{
-  font-size:18px;
-  color:#d0d0d0;
-  margin-top:10px;
 }
 
 .hero-content{
@@ -35,6 +26,16 @@ body{
   flex-direction:column;
   align-items:center;
   gap:15px;
+}
+
+.hero h1{
+  font-size:48px;
+  color:#f5d27a;
+  letter-spacing:2px;
+}
+
+.hero p{
+  color:#ccc;
 }
 
 /* BUTTONS */
@@ -45,17 +46,12 @@ body{
   text-decoration:none;
   border-radius:8px;
   font-weight:bold;
-  transition:0.3s;
-}
-
-.btn:hover{
-  background:#f5d27a;
 }
 
 .btn-group{
   display:flex;
-  gap:10px;
   flex-wrap:wrap;
+  gap:10px;
   justify-content:center;
 }
 
@@ -73,7 +69,6 @@ body{
 /* LIST */
 .list{
   list-style:none;
-  padding:0;
 }
 
 /* GALLERY */
@@ -91,11 +86,6 @@ body{
   object-fit:cover;
   border-radius:12px;
   cursor:pointer;
-  transition:0.3s;
-}
-
-.gallery-img:hover{
-  transform:scale(1.03);
 }
 
 /* FORM */
@@ -120,14 +110,13 @@ footer{
   color:#d4af37;
   text-align:center;
   padding:20px;
-  border-top:1px solid #222;
 }
 
 /* MOBILE */
 @media(max-width:768px){
 
   .hero h1{
-    font-size:38px;
+    font-size:34px;
   }
 
   .btn-group{
