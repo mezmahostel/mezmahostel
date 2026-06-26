@@ -20,7 +20,8 @@
       <a href="#booking" class="btn">Book Now</a>
       <a href="https://wa.me/37495169597" class="btn" target="_blank">WhatsApp Booking</a>
 
-      <button class="btn" onclick="toggleGallery()">📸 Open Gallery</button>
+      <!-- ✔ Gallery Button (like other buttons) -->
+      <a href="#gallery" class="btn">📸 Open Gallery</a>
     </div>
   </header>
 
@@ -32,17 +33,22 @@
     </p>
   </section>
 
-  <!-- ROOMS (ONLY BUTTON) -->
+  <!-- ROOMS (NO IMAGES HERE) -->
   <section id="rooms" class="section dark">
     <h2>Dorm Rooms</h2>
 
-    <p>View all room photos in gallery</p>
+    <div class="grid">
+      <div class="card">Dorm Rooms</div>
+      <div class="card">Private Rooms</div>
+      <div class="card">Shared Rooms</div>
+      <div class="card">Budget Rooms</div>
+    </div>
 
-    <a href="#gallery" class="btn" onclick="openGallery()">View Rooms</a>
+    <p style="margin-top:15px;">Click “Open Gallery” to view room photos</p>
   </section>
 
-  <!-- GALLERY (HIDDEN BY DEFAULT) -->
-  <section id="gallery" class="section dark" style="display:none;">
+  <!-- GALLERY -->
+  <section id="gallery" class="section dark">
     <h2>Gallery</h2>
 
     <div class="grid">
@@ -97,19 +103,6 @@
   <footer>
     <p>© 2026 Mezma Hostel. All rights reserved.</p>
   </footer>
-
-  <!-- SCRIPT -->
-  <script>
-    function toggleGallery() {
-      const g = document.getElementById("gallery");
-      g.style.display = (g.style.display === "none") ? "block" : "none";
-    }
-
-    function openGallery() {
-      document.getElementById("gallery").style.display = "block";
-      document.getElementById("gallery").scrollIntoView({ behavior: "smooth" });
-    }
-  </script>
 
 </body>
 </html>
