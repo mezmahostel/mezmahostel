@@ -12,41 +12,29 @@
   <!-- HERO -->
   <header class="hero">
     <div class="overlay"></div>
+
     <div class="hero-content">
       <h1>Mezma Hostel</h1>
       <p>Comfortable & Affordable Stay in Yerevan</p>
-<a href="#booking" class="btn">Book Now</a>
-<a href="https://wa.me/37495169597" class="btn" target="_blank">
-WhatsApp Booking
-</a>
+
+      <a href="#booking" class="btn">Book Now</a>
+      <a href="https://wa.me/37495169597" class="btn" target="_blank">WhatsApp Booking</a>
+
+      <!-- ✅ GALLERY BUTTON -->
+      <button class="btn" onclick="openGallery()">📸 Gallery</button>
     </div>
   </header>
 
+
   <!-- ABOUT -->
   <section class="section">
-    <section class="section dark">
-  <h2>Gallery</h2>
-
-  <div class="grid">
-    <div class="card">
-<img src="room.jpg" width="250">
-<img src="room1.jpg" width="250">
-<p>Room</p>
-</div>
-    <div class="card">Dorm</div>
-    <div class="card">Kitchen</div>
-    <div class="card">Lounge</div>
-    <div class="card">Bathroom</div>
-    <div class="card">Entrance</div>
-  </div>
-
-</section>
     <h2>About Us</h2>
     <p>
       Mezma Hostel is a cozy place in Yerevan with 8 rooms offering a friendly
       environment for travelers from all over the world.
     </p>
   </section>
+
 
   <!-- ROOMS -->
   <section class="section dark">
@@ -58,6 +46,20 @@ WhatsApp Booking
       <div class="card">Budget Rooms</div>
     </div>
   </section>
+
+
+  <!-- ✅ GALLERY (HIDDEN BY DEFAULT) -->
+  <section class="section dark">
+    <h2>Gallery</h2>
+
+    <div id="gallery" class="grid" style="display:none;">
+      <div class="card"><img src="image/room.jpg" width="250"></div>
+      <div class="card"><img src="image/room1.jpg" width="250"></div>
+      <div class="card"><img src="image/room2.jpg" width="250"></div>
+      <div class="card"><img src="image/room3.jpg" width="250"></div>
+    </div>
+  </section>
+
 
   <!-- FACILITIES -->
   <section class="section">
@@ -71,22 +73,21 @@ WhatsApp Booking
     </ul>
   </section>
 
+
   <!-- BOOKING -->
   <section id="booking" class="section dark">
     <h2>Booking</h2>
 
-<form class="form" id="bookingForm">
-
-  <input type="text" id="name" placeholder="Full Name" required>
-  <input type="email" id="email" placeholder="Email" required>
-  <input type="date" id="checkin" required>
-  <input type="date" id="checkout" required>
-  <input type="number" id="guests" placeholder="Guests" required>
-
-  <button type="submit">Send to WhatsApp</button>
-
-</form>
+    <form class="form" id="bookingForm">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="date" id="checkin" required>
+      <input type="date" id="checkout" required>
+      <input type="number" id="guests" placeholder="Guests" required>
+      <button type="submit">Send to WhatsApp</button>
+    </form>
   </section>
+
 
   <!-- CONTACT -->
   <section class="section">
@@ -95,10 +96,24 @@ WhatsApp Booking
     <p>📧 Email: meysamdibaa@gmail.com</p>
   </section>
 
+
   <footer>
     <p>© 2026 Mezma Hostel. All rights reserved.</p>
   </footer>
 
-  <script src="script.js"></script>
+
+  <!-- ✅ SCRIPT -->
+  <script>
+    function openGallery() {
+      var g = document.getElementById("gallery");
+
+      if (g.style.display === "none") {
+        g.style.display = "grid";
+      } else {
+        g.style.display = "none";
+      }
+    }
+  </script>
+
 </body>
 </html>
