@@ -6,167 +6,144 @@
   <title>Mezma Hostel</title>
   <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-  <!-- HERO -->
-  <header class="hero reveal">
-    <div class="hero-content">
-      <h1>Mezma Hostel</h1>
-      <p>Comfortable & Affordable Stay in Yerevan</p>
+<!-- LANGUAGE SWITCH -->
+<div class="lang-switch">
+  <button onclick="setLang('en')">EN</button>
+  <button onclick="setLang('fa')">FA</button>
+  <button onclick="setLang('hy')">HY</button>
+</div>
 
-      <div class="btn-group">
-        <a href="#rooms" class="btn">Rooms</a>
-        <a href="#booking" class="btn">Booking</a>
-        <a target="_blank"
-           href="https://wa.me/37495169597?text=Hello%20I%20want%20to%20book%20a%20room%20at%20Mezma%20Hostel"
-           class="btn">
-          WhatsApp Booking
-        </a>
-      </div>
-    </div>
-  </header>
+<!-- HERO -->
+<header class="hero reveal">
+  <div class="hero-content">
+    <h1 data-en="Mezma Hostel" data-fa="هاستل مزما" data-hy="Մեզմա Հոսթել"></h1>
 
-  <!-- ABOUT -->
-  <section class="section reveal">
-    <h2>About Us</h2>
-    <p>Cozy hostel in Yerevan with friendly atmosphere for travelers.</p>
-  </section>
+    <p data-en="Comfortable & Affordable Stay in Yerevan"
+       data-fa="اقامت راحت و ارزان در ایروان"
+       data-hy="Հարմարավետ և մատչելի կացություն Երևանում"></p>
 
-  <!-- ROOMS -->
-  <section id="rooms" class="section dark reveal">
-    <h2>Rooms</h2>
+    <div class="btn-group">
+      <a href="#rooms" class="btn" data-en="Rooms" data-fa="اتاق‌ها" data-hy="Սենյակներ"></a>
+      <a href="#booking" class="btn" data-en="Booking" data-fa="رزرو" data-hy="Ամրագրում"></a>
 
-    <div class="rooms-grid">
-
-      <div class="room-card">
-        <h3>Dorm Room</h3>
-        <a href="#gallery" class="btn">View Rooms</a>
-      </div>
-
-      <div class="room-card">
-        <h3>Private Room</h3>
-        <a href="#booking" class="btn">Book</a>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- GALLERY -->
-  <section id="gallery" class="section reveal">
-    <h2>Gallery</h2>
-
-    <div class="gallery">
-      <img src="room1.jpg" class="gallery-img">
-      <img src="room2.jpg" class="gallery-img">
-      <img src="room3.jpg" class="gallery-img">
-      <img src="room4.jpg" class="gallery-img">
-      <img src="room5.jpg" class="gallery-img">
-      <img src="room6.jpg" class="gallery-img">
-      <img src="kitchen1.jpg" class="gallery-img">
-      <img src="kitchen2.jpg" class="gallery-img">
-      <img src="bathroom.jpg" class="gallery-img">
-    </div>
-  </section>
-
-  <!-- FACILITIES -->
-  <section class="section dark reveal">
-    <h2>Facilities</h2>
-    <ul class="list">
-      <li>Free WiFi</li>
-      <li>Shared Kitchen</li>
-      <li>Clean Bathrooms</li>
-      <li>24/7 Support</li>
-      <li>Friendly Atmosphere</li>
-    </ul>
-  </section>
-
-  <!-- BOOKING -->
-  <section id="booking" class="section reveal">
-    <h2>Booking</h2>
-
-    <form class="form">
-      <input type="text" placeholder="Full Name">
-      <input type="email" placeholder="Email">
-      <input type="date">
-      <input type="date">
-      <input type="number" placeholder="Guests">
-      <button class="btn" type="submit">Send Request</button>
-    </form>
-  </section>
-
-  <!-- LOCATION -->
-  <section class="section dark reveal">
-    <h2>📍 Location</h2>
-
-    <p>Mezma Hostel - Yerevan, Armenia</p>
-
-    <div style="margin-top:15px;">
-      <a class="btn" target="_blank"
-         href="https://maps.app.goo.gl/WMrTFTWnRxss3Mr47?g_st=aw">
-        Open in Google Maps
+      <a target="_blank"
+         class="btn"
+         href="https://wa.me/37495169597?text=Hello%20I%20want%20to%20book%20a%20room%20at%20Mezma%20Hostel"
+         data-en="WhatsApp Booking"
+         data-fa="رزرو واتساپ"
+         data-hy="WhatsApp ամրագրում">
       </a>
     </div>
-  </section>
+  </div>
+</header>
 
-  <!-- CONTACT -->
-  <section class="section reveal">
-    <h2>Contact</h2>
-    <p>📞 +374 95 169 597</p>
-    <p>📧 meysamdibaa@gmail.com</p>
-  </section>
+<!-- ABOUT -->
+<section class="section reveal">
+  <h2 data-en="About Us" data-fa="درباره ما" data-hy="Մեր մասին"></h2>
+  <p data-en="Cozy hostel in Yerevan with friendly atmosphere for travelers."
+     data-fa="هاستلی دنج در ایروان با فضای دوستانه برای مسافران."
+     data-hy="Հարմարավետ հոսթել Երևանում ճանապարհորդների համար."></p>
+</section>
 
-  <footer class="reveal">
-    <p>© 2026 Mezma Hostel</p>
-  </footer>
+<!-- ROOMS -->
+<section id="rooms" class="section dark reveal">
+  <h2 data-en="Rooms" data-fa="اتاق‌ها" data-hy="Սենյակներ"></h2>
 
-  <!-- LIGHTBOX + ANIMATION -->
-  <script>
-    document.querySelectorAll('.gallery-img').forEach(img => {
-      img.addEventListener('click', () => {
+  <div class="rooms-grid">
+    <div class="room-card">
+      <h3 data-en="Dorm Room" data-fa="اتاق خوابگاهی" data-hy="Համատեղ սենյակ"></h3>
+      <a href="#gallery" class="btn" data-en="View Rooms" data-fa="مشاهده" data-hy="Դիտել"></a>
+    </div>
 
-        const overlay = document.createElement('div');
-        overlay.style.position = 'fixed';
-        overlay.style.top = 0;
-        overlay.style.left = 0;
-        overlay.style.width = '100%';
-        overlay.style.height = '100%';
-        overlay.style.background = 'rgba(0,0,0,0.92)';
-        overlay.style.display = 'flex';
-        overlay.style.alignItems = 'center';
-        overlay.style.justifyContent = 'center';
-        overlay.style.zIndex = 99999;
+    <div class="room-card">
+      <h3 data-en="Private Room" data-fa="اتاق خصوصی" data-hy="Անձնական սենյակ"></h3>
+      <a href="#booking" class="btn" data-en="Book" data-fa="رزرو" data-hy="Ամրագրել"></a>
+    </div>
+  </div>
+</section>
 
-        const bigImg = document.createElement('img');
-        bigImg.src = img.src;
-        bigImg.style.maxWidth = '90%';
-        bigImg.style.maxHeight = '90%';
-        bigImg.style.borderRadius = '12px';
+<!-- GALLERY -->
+<section id="gallery" class="section reveal">
+  <h2 data-en="Gallery" data-fa="گالری" data-hy="Պատկերասրահ"></h2>
 
-        overlay.appendChild(bigImg);
-        document.body.appendChild(overlay);
+  <div class="gallery">
+    <img src="room1.jpg" class="gallery-img">
+    <img src="room2.jpg" class="gallery-img">
+    <img src="room3.jpg" class="gallery-img">
+    <img src="room4.jpg" class="gallery-img">
+    <img src="room5.jpg" class="gallery-img">
+    <img src="room6.jpg" class="gallery-img">
+    <img src="kitchen1.jpg" class="gallery-img">
+    <img src="kitchen2.jpg" class="gallery-img">
+    <img src="bathroom.jpg" class="gallery-img">
+  </div>
+</section>
 
-        overlay.onclick = () => overlay.remove();
-      });
-    });
+<!-- FACILITIES -->
+<section class="section dark reveal">
+  <h2 data-en="Facilities" data-fa="امکانات" data-hy="Հարմարություններ"></h2>
 
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(entry => {
-        if(entry.isIntersecting){
-          entry.target.classList.add('show');
-        }
-      });
-    }, { threshold: 0.15 });
+  <ul class="list">
+    <li data-en="Free WiFi" data-fa="وای‌فای رایگان" data-hy="Անվճար WiFi"></li>
+    <li data-en="Shared Kitchen" data-fa="آشپزخانه مشترک" data-hy="Ընդհանուր խոհանոց"></li>
+    <li data-en="Clean Bathrooms" data-fa="حمام تمیز" data-hy="Մաքուր լոգարան"></li>
+    <li data-en="24/7 Support" data-fa="پشتیبانی ۲۴ ساعته" data-hy="24/7 աջակցություն"></li>
+  </ul>
+</section>
 
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
+<!-- BOOKING -->
+<section id="booking" class="section reveal">
+  <h2 data-en="Booking" data-fa="رزرو" data-hy="Ամրագրում"></h2>
 
-  <!-- FLOATING WHATSAPP BUTTON -->
-  <a href="https://wa.me/37495169597?text=Hello%20I%20want%20to%20book%20a%20room%20at%20Mezma%20Hostel"
-     class="whatsapp-float"
-     target="_blank">
-    💬
+  <form class="form">
+    <input type="text" placeholder="Full Name">
+    <input type="email" placeholder="Email">
+    <input type="date">
+    <input type="date">
+    <input type="number" placeholder="Guests">
+    <button class="btn" type="submit">Send Request</button>
+  </form>
+</section>
+
+<!-- LOCATION -->
+<section class="section dark reveal">
+  <h2 data-en="Location" data-fa="موقعیت" data-hy="Գտնվելու վայրը"></h2>
+
+  <p>Mezma Hostel - Yerevan, Armenia</p>
+
+  <a class="btn" target="_blank"
+     href="https://maps.app.goo.gl/WMrTFTWnRxss3Mr47?g_st=aw">
+    Open in Google Maps
   </a>
+</section>
+
+<!-- CONTACT -->
+<section class="section reveal">
+  <h2 data-en="Contact" data-fa="تماس" data-hy="Կապ"></h2>
+
+  <p>📞 +374 95 169 597</p>
+  <p>📧 meysamdibaa@gmail.com</p>
+</section>
+
+<footer class="reveal">
+  <p>© 2026 Mezma Hostel</p>
+</footer>
+
+<!-- SCRIPT -->
+<script>
+function setLang(lang) {
+  document.querySelectorAll("[data-en]").forEach(el => {
+    el.textContent = el.getAttribute("data-" + lang);
+  });
+  localStorage.setItem("lang", lang);
+}
+
+window.onload = () => {
+  setLang(localStorage.getItem("lang") || "en");
+};
+</script>
 
 </body>
 </html>
