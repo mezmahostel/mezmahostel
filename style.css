@@ -18,31 +18,23 @@ body{
   justify-content:center;
   align-items:center;
   text-align:center;
-  background: linear-gradient(135deg, #000, #111);
-}
-
-.hero-content{
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  gap:15px;
+  background: linear-gradient(135deg,#000,#111);
 }
 
 .hero h1{
   font-size:52px;
   color:#f5d27a;
   letter-spacing:2px;
-  text-shadow:0 0 15px rgba(212,175,55,0.3);
 }
 
 .hero p{
-  color:#cfcfcf;
+  color:#ccc;
 }
 
 /* BUTTONS */
 .btn{
   padding:10px 18px;
-  background: linear-gradient(135deg, #d4af37, #f5d27a);
+  background: linear-gradient(135deg,#d4af37,#f5d27a);
   color:#000;
   text-decoration:none;
   border-radius:10px;
@@ -51,7 +43,7 @@ body{
 }
 
 .btn:hover{
-  transform:scale(1.05);
+  transform:translateY(-3px) scale(1.05);
 }
 
 .btn-group{
@@ -61,23 +53,17 @@ body{
   justify-content:center;
 }
 
-/* ✨ GLASS EFFECT (اصلی‌ترین بخش VIP) */
-.section, .card, .form{
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(12px);
-  border: 1px solid rgba(255,255,255,0.08);
-  border-radius: 14px;
-  box-shadow: 0 8px 30px rgba(0,0,0,0.4);
-}
-
-/* SECTIONS */
+/* SECTIONS (glass effect) */
 .section{
+  margin:20px;
   padding:50px 20px;
   text-align:center;
-  margin:20px;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+  border:1px solid rgba(255,255,255,0.08);
+  border-radius:14px;
 }
 
-/* DARK fallback */
 .dark{
   background: rgba(0,0,0,0.3);
 }
@@ -85,7 +71,6 @@ body{
 /* LIST */
 .list{
   list-style:none;
-  padding:0;
 }
 
 /* GALLERY */
@@ -104,7 +89,6 @@ body{
   border-radius:12px;
   cursor:pointer;
   transition:0.3s;
-  border:1px solid rgba(255,255,255,0.1);
 }
 
 .gallery-img:hover{
@@ -118,11 +102,9 @@ body{
   gap:10px;
   max-width:300px;
   margin:auto;
-  padding:20px;
 }
 
-.form input,
-.form button{
+.form input{
   padding:10px;
   border:none;
   border-radius:8px;
@@ -132,14 +114,23 @@ body{
 footer{
   text-align:center;
   padding:20px;
-  background: rgba(0,0,0,0.6);
   color:#f5d27a;
-  margin-top:20px;
+}
+
+/* ANIMATION SYSTEM */
+.reveal{
+  opacity:0;
+  transform:translateY(20px);
+  transition:all 0.8s ease;
+}
+
+.show{
+  opacity:1;
+  transform:translateY(0);
 }
 
 /* MOBILE */
 @media(max-width:768px){
-
   .hero h1{
     font-size:34px;
   }
@@ -151,11 +142,6 @@ footer{
 
   .btn{
     width:90%;
-    text-align:center;
-  }
-
-  .gallery{
-    grid-template-columns:repeat(2,1fr);
   }
 
   .section{
