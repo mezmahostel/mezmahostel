@@ -6,10 +6,9 @@
 }
 
 body{
-  font-family: Arial, sans-serif;
+  font-family: Arial;
   background:#0b0b0b;
   color:#fff;
-  overflow-x:hidden;
 }
 
 /* HERO */
@@ -21,51 +20,31 @@ body{
   align-items:center;
   text-align:center;
   padding:20px;
-  background:linear-gradient(135deg,#000,#111);
+  background:#111;
 }
 
 .hero h1{
-  font-size:clamp(28px,5vw,48px);
+  font-size:40px;
   color:#f5d27a;
-  line-height:1.2;
-  word-break:keep-all;
-}
-
-/* LANGUAGE */
-.lang-switch{
-  position:fixed;
-  top:10px;
-  left:10px;
-  display:flex;
-  gap:6px;
-  z-index:9999;
-}
-
-.lang-switch button{
-  padding:6px 10px;
-  border:none;
-  border-radius:6px;
-  background:#f5d27a;
-  font-weight:bold;
+  white-space:nowrap;
 }
 
 /* BUTTONS */
-.btn{
-  background:#f5d27a;
-  color:#000;
-  padding:10px 14px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:bold;
-  display:inline-block;
-}
-
 .btn-group{
   display:flex;
   flex-wrap:wrap;
   justify-content:center;
   gap:10px;
   margin-top:15px;
+}
+
+.btn{
+  padding:10px 14px;
+  background:#f5d27a;
+  color:#000;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
 }
 
 /* SECTIONS */
@@ -82,32 +61,53 @@ body{
 }
 
 /* GRID */
-.grid{
+.rooms-grid{
   display:grid;
   grid-template-columns:repeat(auto-fit,minmax(150px,1fr));
   gap:10px;
   margin-top:15px;
 }
 
-.card{
-  background:rgba(255,255,255,0.05);
+.room-card{
   padding:20px;
+  background:rgba(255,255,255,0.05);
   border-radius:10px;
 }
 
-/* GALLERY */
+/* GALLERY (اصلاح سایز لپتاپ) */
 .gallery{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-  gap:8px;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:10px;
   margin-top:15px;
 }
 
 .gallery img{
   width:100%;
-  height:120px;
+  height:160px;
   object-fit:cover;
-  border-radius:8px;
+  border-radius:10px;
+  cursor:pointer;
+}
+
+/* LIGHTBOX */
+.lightbox{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:rgba(0,0,0,0.9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  z-index:99999;
+}
+
+.lightbox img{
+  max-width:90%;
+  max-height:90%;
+  border-radius:10px;
 }
 
 /* FORM */
@@ -125,29 +125,20 @@ body{
   border-radius:6px;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:20px;
-  color:#f5d27a;
-}
-
-/* MOBILE FIX */
-@media(max-width:600px){
-  .hero{
-    min-height:55vh;
-  }
-
-  .btn{
-    width:100%;
-    text-align:center;
-  }
-
-  .btn-group{
-    flex-direction:column;
-  }
-
-  .gallery img{
-    height:100px;
-  }
+/* WHATSAPP FIX */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  width:55px;
+  height:55px;
+  background:#25D366;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:22px;
+  color:#fff;
+  text-decoration:none;
+  z-index:99999;
 }
