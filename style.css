@@ -11,7 +11,7 @@ body{
   color:#fff;
 }
 
-/* HERO (FINAL FIX WITH IMAGE) */
+/* HERO */
 .hero{
   min-height:60vh;
   display:flex;
@@ -24,31 +24,33 @@ body{
   position:relative;
   overflow:hidden;
 
-  background:#111; /* fallback */
+  background:#111;
 }
 
+/* BACKGROUND IMAGE */
 .hero::before{
   content:"";
   position:absolute;
   inset:0;
   background:url("khune.jpg") center/cover no-repeat;
 
-  opacity:0.18;
+  opacity:0.3;        /* 🔥 روشن‌تر شد */
   filter:blur(3px);
   transform:scale(1.08);
 
   z-index:0;
 }
 
+/* DARK OVERLAY */
 .hero::after{
   content:"";
   position:absolute;
   inset:0;
-  background:rgba(0,0,0,0.55);
+  background:rgba(0,0,0,0.45);
   z-index:1;
 }
 
-/* keep text above image */
+/* TEXT ON TOP */
 .hero h1,
 .hero p,
 .hero .btn-group{
