@@ -16,9 +16,9 @@
       <p>Comfortable & Affordable Stay in Yerevan</p>
 
       <div class="btn-group">
-        <a href="#booking" class="btn">Book Now</a>
-        <a href="https://wa.me/37495169597" class="btn">WhatsApp</a>
+        <a href="#rooms" class="btn">Rooms</a>
         <a href="#gallery" class="btn">Gallery</a>
+        <a href="#booking" class="btn">Booking</a>
       </div>
     </div>
   </header>
@@ -26,34 +26,35 @@
   <!-- ABOUT -->
   <section class="section reveal">
     <h2>About Us</h2>
-    <p>Cozy hostel in Yerevan with friendly environment for travelers.</p>
+    <p>Cozy hostel in Yerevan with a friendly atmosphere for travelers from all over the world.</p>
   </section>
 
   <!-- ROOMS -->
-  <section class="section dark reveal">
+  <section id="rooms" class="section dark reveal">
     <h2>Dorm Rooms</h2>
-    <a href="#gallery" class="btn">View Rooms</a>
+    <p>Comfortable shared rooms for guests</p>
+    <a href="#booking" class="btn">Reserve Now</a>
   </section>
 
   <!-- GALLERY -->
-  <section id="gallery" class="section dark">
-    <h2 class="reveal">Gallery</h2>
+  <section id="gallery" class="section reveal">
+    <h2>Gallery</h2>
 
     <div class="gallery">
-      <img src="room1.jpg" class="gallery-img reveal">
-      <img src="room2.jpg" class="gallery-img reveal">
-      <img src="room3.jpg" class="gallery-img reveal">
-      <img src="room4.jpg" class="gallery-img reveal">
-      <img src="room5.jpg" class="gallery-img reveal">
-      <img src="room6.jpg" class="gallery-img reveal">
-      <img src="kitchen1.jpg" class="gallery-img reveal">
-      <img src="kitchen2.jpg" class="gallery-img reveal">
-      <img src="bathroom.jpg" class="gallery-img reveal">
+      <img src="room1.jpg" class="gallery-img">
+      <img src="room2.jpg" class="gallery-img">
+      <img src="room3.jpg" class="gallery-img">
+      <img src="room4.jpg" class="gallery-img">
+      <img src="room5.jpg" class="gallery-img">
+      <img src="room6.jpg" class="gallery-img">
+      <img src="kitchen1.jpg" class="gallery-img">
+      <img src="kitchen2.jpg" class="gallery-img">
+      <img src="bathroom.jpg" class="gallery-img">
     </div>
   </section>
 
   <!-- FACILITIES -->
-  <section class="section reveal">
+  <section class="section dark reveal">
     <h2>Facilities</h2>
     <ul class="list">
       <li>Free WiFi</li>
@@ -65,7 +66,7 @@
   </section>
 
   <!-- BOOKING -->
-  <section id="booking" class="section dark reveal">
+  <section id="booking" class="section reveal">
     <h2>Booking</h2>
 
     <form class="form">
@@ -74,23 +75,39 @@
       <input type="date">
       <input type="date">
       <input type="number" placeholder="Guests">
-      <button type="submit" class="btn">Send</button>
+      <button type="submit" class="btn">Send Request</button>
     </form>
+  </section>
+
+  <!-- LOCATION -->
+  <section class="section dark reveal">
+    <h2>📍 Location</h2>
+
+    <p>Mezma Hostel - Yerevan, Armenia</p>
+    <p style="color:#ccc; font-size:14px;">
+      Click below to open in Google Maps
+    </p>
+
+    <a class="btn" target="_blank"
+       href="https://maps.app.goo.gl/WMrTFTWnRxss3Mr47?g_st=aw">
+      Open in Google Maps
+    </a>
   </section>
 
   <!-- CONTACT -->
   <section class="section reveal">
     <h2>Contact</h2>
-    <p>📞 WhatsApp: +37495169597</p>
-    <p>📧 Email: meysamdibaa@gmail.com</p>
+    <p>📞 +374 95 169 597</p>
+    <p>📧 meysamdibaa@gmail.com</p>
   </section>
 
   <footer class="reveal">
-    <p>© 2026 Mezma Hostel</p>
+    <p>© 2026 Mezma Hostel. All rights reserved.</p>
   </footer>
 
-  <!-- LIGHTBOX -->
+  <!-- LIGHTBOX + ANIMATION -->
   <script>
+    // Image popup
     document.querySelectorAll('.gallery-img').forEach(img => {
       img.addEventListener('click', () => {
 
@@ -119,7 +136,7 @@
       });
     });
 
-    // Scroll reveal
+    // Scroll reveal animation
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
         if(entry.isIntersecting){
@@ -128,9 +145,7 @@
       });
     }, { threshold: 0.15 });
 
-    document.querySelectorAll('.reveal').forEach(el => {
-      observer.observe(el);
-    });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
 </body>
