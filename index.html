@@ -10,50 +10,50 @@
 <body>
 
   <!-- HERO -->
-  <header class="hero">
+  <header class="hero reveal">
     <div class="hero-content">
       <h1>Mezma Hostel</h1>
       <p>Comfortable & Affordable Stay in Yerevan</p>
 
       <div class="btn-group">
         <a href="#booking" class="btn">Book Now</a>
-        <a href="https://wa.me/37495169597" class="btn">WhatsApp Booking</a>
-        <a href="#gallery" class="btn">Open Gallery</a>
+        <a href="https://wa.me/37495169597" class="btn">WhatsApp</a>
+        <a href="#gallery" class="btn">Gallery</a>
       </div>
     </div>
   </header>
 
   <!-- ABOUT -->
-  <section class="section">
+  <section class="section reveal">
     <h2>About Us</h2>
     <p>Cozy hostel in Yerevan with friendly environment for travelers.</p>
   </section>
 
   <!-- ROOMS -->
-  <section class="section dark">
+  <section class="section dark reveal">
     <h2>Dorm Rooms</h2>
     <a href="#gallery" class="btn">View Rooms</a>
   </section>
 
   <!-- GALLERY -->
   <section id="gallery" class="section dark">
-    <h2>Gallery</h2>
+    <h2 class="reveal">Gallery</h2>
 
     <div class="gallery">
-      <img src="room1.jpg" class="gallery-img">
-      <img src="room2.jpg" class="gallery-img">
-      <img src="room3.jpg" class="gallery-img">
-      <img src="room4.jpg" class="gallery-img">
-      <img src="room5.jpg" class="gallery-img">
-      <img src="room6.jpg" class="gallery-img">
-      <img src="kitchen1.jpg" class="gallery-img">
-      <img src="kitchen2.jpg" class="gallery-img">
-      <img src="bathroom.jpg" class="gallery-img">
+      <img src="room1.jpg" class="gallery-img reveal">
+      <img src="room2.jpg" class="gallery-img reveal">
+      <img src="room3.jpg" class="gallery-img reveal">
+      <img src="room4.jpg" class="gallery-img reveal">
+      <img src="room5.jpg" class="gallery-img reveal">
+      <img src="room6.jpg" class="gallery-img reveal">
+      <img src="kitchen1.jpg" class="gallery-img reveal">
+      <img src="kitchen2.jpg" class="gallery-img reveal">
+      <img src="bathroom.jpg" class="gallery-img reveal">
     </div>
   </section>
 
   <!-- FACILITIES -->
-  <section class="section">
+  <section class="section reveal">
     <h2>Facilities</h2>
     <ul class="list">
       <li>Free WiFi</li>
@@ -65,7 +65,7 @@
   </section>
 
   <!-- BOOKING -->
-  <section id="booking" class="section dark">
+  <section id="booking" class="section dark reveal">
     <h2>Booking</h2>
 
     <form class="form">
@@ -74,25 +74,25 @@
       <input type="date">
       <input type="date">
       <input type="number" placeholder="Guests">
-      <button type="submit">Send</button>
+      <button type="submit" class="btn">Send</button>
     </form>
   </section>
 
   <!-- CONTACT -->
-  <section class="section">
+  <section class="section reveal">
     <h2>Contact</h2>
     <p>📞 WhatsApp: +37495169597</p>
     <p>📧 Email: meysamdibaa@gmail.com</p>
   </section>
 
-  <footer>
+  <footer class="reveal">
     <p>© 2026 Mezma Hostel</p>
   </footer>
 
   <!-- LIGHTBOX -->
   <script>
     document.querySelectorAll('.gallery-img').forEach(img => {
-      img.addEventListener('click', function () {
+      img.addEventListener('click', () => {
 
         const overlay = document.createElement('div');
         overlay.style.position = 'fixed';
@@ -107,7 +107,7 @@
         overlay.style.zIndex = 99999;
 
         const bigImg = document.createElement('img');
-        bigImg.src = this.src;
+        bigImg.src = img.src;
         bigImg.style.maxWidth = '90%';
         bigImg.style.maxHeight = '90%';
         bigImg.style.borderRadius = '12px';
@@ -115,8 +115,21 @@
         overlay.appendChild(bigImg);
         document.body.appendChild(overlay);
 
-        overlay.addEventListener('click', () => overlay.remove());
+        overlay.onclick = () => overlay.remove();
       });
+    });
+
+    // Scroll reveal
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
+          entry.target.classList.add('show');
+        }
+      });
+    }, { threshold: 0.15 });
+
+    document.querySelectorAll('.reveal').forEach(el => {
+      observer.observe(el);
     });
   </script>
 
